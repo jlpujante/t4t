@@ -1,0 +1,31 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: initial !important;
+  height: 100%;
+}
+.md-chips .md-chip-input-container input[aria-label] {
+  color: white;
+}
+.md-chips .md-chip {
+  background: #e0e0e0;
+  color: #424242;
+}
+.md-chips .md-chip.md-focused {
+  background: #ffab40;
+  color: #ffffff;
+}
+md-chips.md-default-theme .md-chips,
+md-chips .md-chips {
+  box-shadow: 0 2px rgba(255, 255, 255, 0.4);
+  min-width: 700px;
+  max-width: 700px;
+}
+md-chips.md-default-theme .md-chips,
+md-chips .md-chips.md-focused {
+  box-shadow: 0 2px #ffffff;
+}

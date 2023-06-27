@@ -1,0 +1,212 @@
+@import "variables";
+
+.satmed-btn-add:after {
+    font-family: "Glyphicons Halflings";
+    content: "\2b";
+}
+.satmed-btn-remove:after {
+    font-family: "Glyphicons Halflings";
+    content: "\2212";
+}
+.satmed-btn-up:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e113";
+}
+.satmed-btn-down:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e114";
+}
+.satmed-btn-reset:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e030";
+    vertical-align: bottom;
+}
+
+a:active,
+a:hover,
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/*
+ * Application buttons
+ */
+.satmed-btn-rounded {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 2px solid;
+    border-color: @project-gray-light-color;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    color: @project-blue-color !important;
+    text-align: center;
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    letter-spacing: 1px;
+    padding: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 13px;
+    background-image : none;
+    background: rgba(0,0,0,0);
+    background-color: #ffffff;
+    -webkit-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -moz-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    -o-transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+    transition: background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+}
+
+.satmed-btn-rounded:active,
+.satmed-btn-rounded:hover,
+.satmed-btn-rounded:focus {
+    outline: none;
+    background-color: #ffffff !important;
+    color: @project-blue-color !important;
+}
+.satmed-btn-rounded-default {
+    color: #fff !important;
+    background-color: @project-blue-color;
+    border-color: @project-blue-color;
+}
+.satmed-btn-rounded-default:hover {
+    border-color: @project-blue-color;
+    color: @project-blue-color !important;
+}
+.satmed-btn-rounded-default:active {
+    border-color: @project-blue-color;
+    background: @project-blue-color;
+    color: white !important;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.satmed-btn-rounded-success {
+    color: #fff !important;
+    background-color: @project-green-color;
+    border-color: @project-green-color;
+}
+.satmed-btn-rounded-success:hover {
+    border-color: @project-green-color;
+    color: @project-green-color !important;
+}
+.satmed-btn-rounded-success:active {
+    border-color: @project-green-color;
+    background: @project-green-color;
+    color: white !important;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+.satmed-btn-rounded-cancel {
+    color: #fff !important;
+    background-color: @project-red-color;
+    border-color: @project-red-color;
+}
+.satmed-btn-rounded-cancel:hover {
+    border-color: @project-red-color;
+    color: @project-red-color !important;
+}
+.satmed-btn-rounded-cancel:active {
+    border-color: @project-red-color;
+    background: @project-red-color;
+    color: white !important;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -o-transition: none;
+    transition: none;
+}
+
+/*
+ * Application circle buttons
+ */
+.satmed-btn-circle {
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 10px;
+    line-height: 1.42;
+    border-radius: 25px;
+    border-color: @project-gray-light-color;
+    outline: none;
+}
+.satmed-btn-circle:active,
+.satmed-btn-circle:visited,
+.satmed-btn-circle:focus {
+    outline: none;
+}
+.satmed-btn-circle:hover,
+.satmed-btn-circle:active {
+    background:white;
+    border-width: 2px;
+    outline: none;
+}
+
+.satmed-btn-circle-default {
+    background-color: @project-blue-color !important;
+    color: white !important;
+    border-color: @project-blue-color !important;
+    outline: none;
+}
+.satmed-btn-circle-default:hover {
+    background-color: white !important;
+    color: @project-blue-color !important;
+    border-color: @project-blue-color;
+    outline: none;
+}
+
+.satmed-btn-circle-cancel {
+    background-color: @project-red-color !important;
+    color: white !important;
+    border-color: @project-red-color !important;
+    outline: none;
+}
+.satmed-btn-circle-cancel:hover {
+    background-color: white !important;
+    color: @project-red-color !important;
+    border-color: @project-red-color;
+    outline: none;
+}
+
+.satmed-btn-rounded-disabled,
+.satmed-btn-rounded-disabled:focus,
+.satmed-btn-rounded-disabled:visited,
+.satmed-btn-rounded-disabled:hover,
+.satmed-btn-rounded-disabled:active {
+    pointer-events: none;
+    cursor: default;
+    border-color: @project-gray-light-color !important;
+    color: #b9b9b9 !important;
+    background-color: @project-gray-light-color !important;
+}
+
+
+
+/*
+ * Edit button
+ */
+.satmed-edit-link:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e065";
+}
+
+
+/*
+ * Uploader button
+ */
+.btn-uploader {
+	background-image: linear-gradient(#6d7070, #474949 50%, #3d3f3f);
+	background-repeat: no-repeat;
+	color: #ffffff;
+}
+.btn-uploader:hover {
+	background-image: linear-gradient(#6d7070, #474949 50%, #3d3f3f);
+	background-repeat: no-repeat;
+	color: #a0a0a0;
+}

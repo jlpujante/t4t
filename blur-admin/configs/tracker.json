@@ -1,0 +1,26 @@
+{
+   "server_config_file1"           : "/etc/trach4truck/tracker.json",
+   "environment"                   : "development",
+   "development"                   : {
+      "secret_key"                 : "TrAcK4TrUcKdOtLuKeYcHaNgEmEfOrDeVeLoPmEnT",
+      "contact_email"              : "contact@track4truck.com",
+      "application_url"            : "http://localhost:9999",
+      "same_origin_policy_domain"  : "track4truck.com",
+      "log_level"                  : "debug",
+      "database"                   : "postgresql://postgres:postgres@localhost/t4t",
+      "redis_host"                 : "localhost",
+      "redis_port"                 : 6379,
+      "redis_db"                   : 0
+   },
+   "production"                    : {
+      "secret_key"                 : "TrAcK4TrUcKdOtLuKeYcHaNgEmEfOrPrOdUcTiOn",
+      "contact_email"              : "contact@track4truck.com",
+      "application_url"            : "http://portal.track4truck.com",
+      "same_origin_policy_domain"  : "track4truck.com",
+      "log_level"                  : "debug",
+      "database"                   : "postgresql://postgres:postgres@localhost/t4t",
+      "redis_host"                 : "redis",
+      "redis_port"                 : 6379,
+      "redis_db"                   : 0
+   }
+}

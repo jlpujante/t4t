@@ -1,0 +1,226 @@
+@import "variables";
+
+.satmed-round-button:after {
+    font-family: "Glyphicons Halflings";
+    content: "\2b";
+}
+.satmed-round-button-add:after {
+    font-family: "Glyphicons Halflings";
+    content: "\2b";
+}
+.satmed-round-button-upload:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e198";
+}
+.satmed-round-button-trash:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e020";
+}
+.satmed-round-button-settings:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e019";
+}
+.satmed-round-button-filter:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e138";
+}
+.satmed-round-button-reset:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e030";
+}
+.satmed-round-button-logout:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e163";
+}
+.satmed-round-button-home:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e021";
+}
+.satmed-round-button-chat:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e111";
+}
+.satmed-round-button-fullscreen:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e140";
+}
+.satmed-round-button-ok:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e013";
+}
+
+.satmed-round-button-phone:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e183";
+}
+.satmed-round-button-video:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e059";
+}
+.satmed-round-button-audio:after {
+    font-family: "Glyphicons Halflings";
+    content: "\e035";
+}
+
+
+.table-conference-btn tr td {
+    padding: 10px;
+}
+
+.btn-video-section table {
+    margin: auto;
+}
+
+/*
+.btn-xs-video-section table {
+    margin: auto;
+}
+
+.btn-lg-video-section table {
+    margin: auto;
+}*/
+
+.btn-chat-section table {
+    margin: auto;
+}
+
+.modal-body-options {
+    padding: 30px 15px 30px 15px;
+}
+
+.modal-satmed-buttons-option .modal-dialog {
+    width: 100%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.modal-satmed-buttons-option .modal-content {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
+.menu-options-modal {
+	align: center;
+}
+
+
+
+
+#container {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.section.expand {
+  height: auto;
+}
+.columns-container {
+  //display: table-cell;
+  height: 100%;
+  width: 100%;
+}
+.column {
+  /* The float:left won't work for Chrome for some reason, so inline-block */
+  display: inline-block; /* for this to work, the .column elements should have NO SPACE BETWEEN THEM */
+  vertical-align: top;
+  height: 100%;
+  width: 22%;
+}
+
+.column > a{
+  margin-bottom: 5px;}
+
+//.column-label {
+//}
+
+.column:hover .column-label {
+    color: @primary-color;
+}
+
+
+
+
+
+
+.menu-options-modal tr td {
+    width: 25%;
+	//padding: 5px;
+    vertical-align: top;
+    padding-top: 0px;
+    text-align: center;
+}
+
+.menu-options-modal .menu-option-link{
+    display: block;
+    //padding-left: 20%;
+}
+
+.satmed-btn-options-xs {
+	position: fixed;
+	right: 25px;
+	bottom: 20px;
+}
+.satmed-btn-options-xs-left {
+	position: fixed;
+	left: 25px;
+	bottom: 20px;
+}
+.satmed-round-button {
+    display:block;
+    width:50px;
+    height:50px;
+    line-height:50px;
+    border: 2px solid @project-blue-color;
+    border-radius: 50%;
+    color: #ffffff;
+	//padding-left: 2px;
+    text-align:center;
+    text-decoration:none;
+    background: @project-blue-color;
+    //box-shadow: 0 0 3px gray;
+    font-size:17px;
+}
+.satmed-round-button:hover {
+	background: white;
+	color: @project-blue-color;
+}
+.satmed-round-button:active {
+	background: @project-blue-color;
+	color: @project-gray-light-color;
+}
+
+.satmed-round-button-gray {
+	background: @project-gray-light-color;
+	color: @project-gray-dark-color;
+	border: 2px solid @project-gray-light-color;
+}
+.satmed-round-button-gray:hover {
+	background: @project-gray-dark-color;
+	color: @project-gray-light-color;
+}
+
+.satmed-round-button-red {
+	background: @project-red-color;
+	color: @project-gray-light-color;
+	border: 2px solid @project-red-color;
+}
+.satmed-round-button-red:hover {
+	background: white;
+	color: @project-red-color;
+}
+
+.satmed-round-button-success {
+	background: @project-green-color;
+	color: @project-gray-light-color;
+	border: 2px solid @project-green-color;
+}
+.satmed-round-button-success:hover {
+    background: white;
+	color: @project-green-color;
+}
+
+
+/*avoid problem with float round button for xs screeens*/
+.input-group .form-control {
+	z-index: 0;
+}

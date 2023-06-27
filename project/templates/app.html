@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="trackerApp">
+<head>
+    <title>Tracker</title>
+
+    {% include 'inc_head.html' %}
+
+</head>
+
+<body class="application-body">
+
+    <spinner-component type="points"></spinner-component>
+
+    <div class="main-container" id="container-box">
+        <div id="page-wrap">
+            <div ng-view></div>
+        </div>
+    </div><!-- end main-container -->
+
+    {% include 'inc_scripts.html' %}
+
+</body>
+</html>

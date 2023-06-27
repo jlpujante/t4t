@@ -1,0 +1,52 @@
+<div class="modal modal-satmed-buttons-option" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header modal-header-satmed">
+                {{ localeData.msg_0020 }}
+                <a tabindex="-1" id="btnCancel" ng-click="hideModal($event)" href="#"
+                   class="pull-right modal-cancel-btn">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </a>
+                <br/>
+            </div>
+            <div class="modal-body modal-body-options">
+
+                <div id="container">
+                    <div align="center">
+                        <div class="section expand">
+                            <div class="columns-container">
+
+                                <div class="column" ng-if="!trash_view">
+                                    <a tabindex="-1" ng-click="OptionNewFolder($event)" href="#"
+                                       class="satmed-round-button satmed-round-button-add"></a>
+                                    <span class="column-label"><small>{{ localeData.msg_0008 }}</small></span>
+                                </div>
+                                <div class="column" ng-if="!trash_view">
+                                    <a tabindex="-1" ng-click="OptionNewFile($event)" href="#"
+                                       class="satmed-round-button satmed-round-button-upload"></a>
+                                    <span class="column-label"><small>{{ localeData.msg_0004 }}</small></span>
+                                </div>
+                                <div class="column" ng-if="trash_view">
+                                    <a tabindex="-1" ng-click="OptionEmptyTrash($event)" href="#"
+                                       class="satmed-round-button satmed-round-button-trash"></a>
+                                    <span class="column-label"><small>{{ localeData.msg_0118 }}</small></span>
+                                </div>
+                                <div class="column" ng-if="!trash_view">
+                                    <a tabindex="-1" ng-click="OptionGoTrash($event)" href="#"
+                                       class="satmed-round-button satmed-round-button-trash"></a>
+                                    <span class="column-label"><small>{{ localeData.msg_0117 }}</small></span>
+                                </div>
+                                <div class="column">
+                                    <a tabindex="-1" ng-click="OptionGoPortal($event)" href="#"
+                                       class="satmed-round-button satmed-round-button-logout"></a>
+                                    <span class="column-label"><small>{{ localeData.msg_0035 }}</small></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

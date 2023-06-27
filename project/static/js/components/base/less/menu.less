@@ -1,0 +1,64 @@
+body{
+	.navbar{
+		.nav{
+			li.logout{
+				background: transparent url('@{img_satmed_folder}/logout.png') 15px center no-repeat;
+				@media (min-width: @screen-md-min) {
+					padding-top: 25px;
+				}
+				@media (min-width: @screen-md-min) {
+					padding-left: 0;
+					margin-left: 40px;
+					background: transparent url('@{img_satmed_folder}/logout.png') center 20px no-repeat;
+				}
+				@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+					background-image: url('@{img_satmed_folder}/logout@2x.png');
+					background-size: 18px 18px;
+				}
+				a{
+					display: inline-block;
+					padding-left: 40px;
+					width: 100%;
+					color: @primary-color;
+					@media (min-width: @screen-md-min) {
+						display: inherit;
+						padding-left: 15px;
+					}
+				}
+				a:hover{
+
+				}
+			}
+			li.user{
+				background: transparent url('@{img_satmed_folder}/user.png') 15px center no-repeat;
+				@media (min-width: @screen-md-min) {
+					padding-top: 25px;
+				}
+				@media (min-width: @screen-md-min) {
+					padding-left: 0;
+					margin-left: 40px;
+					background: transparent url('@{img_satmed_folder}/user.png') center 20px no-repeat;
+				}
+				@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+					background-image: url('@{img_satmed_folder}/user@2x.png');
+					background-size: 18px 18px;
+				}
+				a{
+					text-transform: none;
+					display: inline-block;
+					padding-left: 40px;
+					width: 100%;
+					color: @primary-color;
+					font-size: 13px;
+					@media (min-width: @screen-md-min) {
+						display: inherit;
+						padding-left: 15px;
+					}
+				}
+				a:hover{
+
+				}
+			}
+		}
+	}
+}

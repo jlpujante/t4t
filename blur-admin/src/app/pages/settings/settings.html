@@ -1,0 +1,116 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+
+        <h3 class="with-line">Maps</h3>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row clearfix">
+                    <label class="col-sm-3 control-label">Map Style</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker
+                                ng-options="style as style for style in stylings" ng-model="item"
+                                ng-click="selectMapStyling($event, item)">
+                            <!--<option value="" ng-selected="selected" hidden>{{localeData.msg_0001}}...</option>-->
+                        </select>
+
+                        <!--<select id="selectFilter" class="form-control" ng-options="item.name for item in filters track by item.id"-->
+                                <!--ng-model="item" ng-click="SelectFilter($event, item.id)">-->
+                            <!--<option value="" ng-selected="selected" hidden>{{localeData.msg_0001}}...</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label class="col-sm-3 control-label">Day Style</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker
+                                ng-options="h as h for h in hours" ng-model="item"
+                                ng-click="selectDayStylingTime($event, item)">
+                        </select>
+                        <!--<select class="form-control" title="Standard Select" selectpicker ng-model="item"-->
+                                <!--ng-click="selectDayStylingTime($event, item)">-->
+                            <!--<option ng-repeat="h in hours" value="{{ h }}">{{ h }}</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label class="col-sm-3 control-label">Night Style</label>
+                    <div class="col-sm-9">
+                        <select class="form-control" title="Standard Select" selectpicker
+                                ng-options="h as h for h in hours" ng-model="item"
+                                ng-click="selectNightStylingTime($event, item)">
+                        </select>
+                        <!--<select class="form-control" title="Standard Select" selectpicker ng-model="item"-->
+                                <!--ng-click="selectNightStylingTime($event, item)">-->
+                            <!--<option ng-repeat="h in hours" value="{{ h }}">{{ h }}</option>-->
+                        <!--</select>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Traffic information</label>
+
+                    <div class="col-xs-4">
+                        <switch color="primary" ng-model="switches[0]"></switch>
+                    </div>
+                </div>
+                <!--<div class="form-group row clearfix">-->
+                <!--<label class="col-xs-8">When Someone sends me an invitation</label>-->
+
+                <!--<div class="col-xs-4">-->
+                <!--<switch color="primary" ng-model="switches[1]"></switch>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="form-group row clearfix">-->
+                <!--<label class="col-xs-8">When profile information changes</label>-->
+
+                <!--<div class="col-xs-4">-->
+                <!--<switch color="primary" ng-model="switches[2]"></switch>-->
+                <!--</div>-->
+                <!--</div>-->
+            </div>
+            <!--<div class="col-sm-6">-->
+            <!--<div class="form-group row clearfix">-->
+            <!--<label class="col-xs-8">When anyone logs into your account from a new device or browser</label>-->
+
+            <!--<div class="col-xs-4">-->
+            <!--<switch color="primary" ng-model="switches[3]"></switch>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div class="form-group row clearfix">&ndash;&gt;-->
+            <!--&lt;!&ndash;<label class="col-xs-8">Weekly Reports</label>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<div class="col-xs-4">&ndash;&gt;-->
+            <!--&lt;!&ndash;<switch color="primary" ng-model="switches[4]"></switch>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<div class="form-group row clearfix">&ndash;&gt;-->
+            <!--&lt;!&ndash;<label class="col-xs-8">Daily Reports</label>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<div class="col-xs-4">&ndash;&gt;-->
+            <!--&lt;!&ndash;<switch color="primary" ng-model="switches[5]"></switch>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--</div>-->
+        </div>
+
+        <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="updateProfile()">
+            <i class="ion-android-checkmark-circle"></i>Save Settings
+        </button>
+    </div>
+</div>

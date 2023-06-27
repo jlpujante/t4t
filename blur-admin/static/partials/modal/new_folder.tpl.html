@@ -1,0 +1,33 @@
+
+<div class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header modal-header-satmed">
+			{{localeData.msg_0008}}
+    		<a tabindex="-1" id="btnCancel" ng-click="hideModal($event)" href="#" class="pull-right modal-cancel-btn">
+				<span class="glyphicon glyphicon-remove"></span>
+			</a>
+			<br/>
+        </div>
+		<form class="form-horizontal" role="form">
+		<div class="modal-body">
+			<div class="clearfix"></div><br/>
+			<div class="form-group">
+				<label for="InputNameFolder" class="col-xs-10 col-sm-3 col-xs-offset-1 control-label">{{localeData.msg_0014}}:</label>
+				<div class="col-xs-10 col-sm-7 col-xs-offset-1">
+					<input type="text" class="form-control foldername" ng-model="folderName" ng-change="changeFolderName(folderName)"
+						id="foldername" maxlength="128" placeholder="{{localeData.msg_0025}}" focus-me="shouldBeOpen" ng-keyup="modalKeyEvent($event, ModalNewFolderInstanceCtrl)">
+				</div>
+			</div>
+		</div>
+		</form>
+		<div class="modal-footer modal-footer-satmed">
+			<div class="text-center">
+				<a tabindex="-1" id="btnOk" ng-click="ModalNewFolderInstanceCtrl($event)" href="#" class="satmed-btn-rounded satmed-btn-rounded-success">
+					<span class="glyphicon glyphicon-ok"></span>&nbsp;{{localeData.msg_0026}}
+				</a>
+			</div>
+        </div>
+    </div>
+  </div>
+</div>

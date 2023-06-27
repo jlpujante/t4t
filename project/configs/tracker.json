@@ -1,0 +1,12 @@
+{
+   "server_config_file1"        : "/etc/traker/traker.json",
+   "secret_key"                 : "SaTmEdKeYcHaNgEmEfOrPrOdUcTiOn",
+   "contact_email"              : "contact@tra.com",
+   "application_url"            : "http://localhost:9999",
+   "same_origin_policy_domain"  : "satmed.com",
+   "log_level"                  : "debug",
+   "database"                   : "postgresql://postgres:postgres@localhost/tracker",
+   "redis_host"                 : "localhost",
+   "redis_port"                 : 6379,
+   "redis_db"                   : 0
+}

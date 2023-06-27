@@ -1,0 +1,13 @@
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+static/css/
+*.pyc
+
+
+traker-venv/
+traker.iml

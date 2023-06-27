@@ -1,0 +1,16 @@
+
+{% if 'scripts' in bundles['vendor'] %}
+    {{ bundles['vendor']['scripts'] | safe }}
+{% endif %}
+
+{% for b in bundles %}
+    {% if 'vendor' != b %}
+        {% if 'login' != b %}
+            {% if 'scripts' in bundles[b] %}
+                {{ bundles[b]['scripts'] | safe }}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+{% endfor %}
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe40Yasy00bNAxFLGUV_JJ4jHP5SJpM2c"></script>

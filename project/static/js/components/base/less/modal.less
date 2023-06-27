@@ -1,0 +1,65 @@
+.modal {
+	margin: auto;
+	position: fixed;
+	display: flex !important;
+    height: 100%;
+}
+
+.modal .modal-dialog{
+	margin: 5% auto auto auto;
+}
+
+.modal-header {
+	background: #000000;
+	color: #ffffff;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 25px;
+	border-top-right-radius: 3px;
+	border-top-left-radius: 3px;
+}
+
+.modal-header button.close {
+	color:#ffffff;
+	opacity:1.0;
+}
+
+.modal-header button.close:active,
+.modal-header button.close:focus,
+.modal-header button.close:visited {
+	border:0px;
+}
+
+.modal-title {
+	color: #ffffff;
+}
+
+.modal-footer {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-right: 15px;
+}
+
+.modal-cancel-btn {
+	color: #ffffff;
+}
+.modal-cancel-btn:hover {
+	color: @project-gray-light-color;
+}
+
+.modal-backdrop.am-fade {
+  opacity: 1.0;
+  transition: opacity .15s linear;
+  &.ng-enter {
+    opacity: 0;
+    &.ng-enter-active {
+      opacity: 1.0;
+    }
+  }
+  &.ng-leave {
+    opacity: 1.0;
+    &.ng-leave-active {
+      opacity: 0;
+    }
+  }
+}

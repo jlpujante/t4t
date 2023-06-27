@@ -1,0 +1,136 @@
+<div layout="column" style="height: {{sidebarHeight}};" ng-cloak>
+
+    <section layout="row" flex>
+
+        <md-sidenav class="md-sidenav-right" md-component-id="account-sidebar" md-whiteframe="4">
+
+            <md-toolbar class="md-theme-light">
+                <div class="md-toolbar-tools">
+                    <h1>
+                        <ng-md-icon size="25"icon="business" style="fill: white"></ng-md-icon>&nbsp;
+                        Company
+                    </h1>
+                </div>
+            </md-toolbar>
+
+            <md-content layout-margin>
+                <br/>
+                <md-input-container class="md-block">
+                    <label>Name</label>
+                    <input ng-model="company.name" disabled>
+                </md-input-container>
+            </md-content>
+
+
+            <md-toolbar class="md-theme-light">
+                <div class="md-toolbar-tools">
+                    <h4 class="md-title">
+                        <ng-md-icon size="25"icon="account_circle" style="fill: white"></ng-md-icon>&nbsp;
+                        User Profile
+                    </h4>
+                </div>
+            </md-toolbar>
+
+            <md-content layout-margin>
+                <br/>
+                <md-input-container class="md-block">
+                    <label>First Name</label>
+                    <input ng-model="account.first_name" type="text">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Last Name</label>
+                    <input ng-model="account.last_name">
+                </md-input-container>
+
+                <md-input-container class="md-block">
+                    <label>Email</label>
+                    <input ng-model="account.email">
+                </md-input-container>
+
+                <span ng-if="account.role=='admin'">
+                    <md-button class="md-icon-button" aria-label="More">
+                        <ng-md-icon icon="security" style="fill: black"></ng-md-icon>
+                        <md-tooltip md-direction="top">
+                            Admin role
+                        </md-tooltip>
+                    </md-button>
+                </span>
+
+                <span ng-if="account.role=='user'">
+                    <md-button class="md-icon-button" aria-label="More">
+                        <ng-md-icon icon="person" style="fill: black"></ng-md-icon>
+                        <md-tooltip md-direction="top">
+                            User role
+                        </md-tooltip>
+                   </md-button>
+                </span>
+
+                <span flex></span>
+                <md-button ng-click="" class="md-raised md-primary">
+                    <ng-md-icon style="fill: white" icon="done"></ng-md-icon>
+                    Save
+                </md-button>
+                <!--<md-button ng-click="close()" class="md-accent">-->
+                    <!--Close this Sidenav-->
+                <!--</md-button>-->
+            </md-content>
+
+
+            <md-toolbar class="md-theme-light">
+                <div class="md-toolbar-tools">
+                    <h1>
+                        <ng-md-icon size="25"icon="map" style="fill: white"></ng-md-icon>&nbsp;
+                        Map settings
+                    </h1>
+                </div>
+            </md-toolbar>
+
+            <md-content layout-margin>
+                <br/>
+                <md-switch aria-label="traffic" ng-model="trafficInfo">
+                    <ng-md-icon icon="traffic"></ng-md-icon>
+                    Traffic information
+                </md-switch>
+
+                <md-switch aria-label="map_mode" ng-model="nightMode">
+                    <ng-md-icon icon="wb_sunny"></ng-md-icon>
+                    day/night
+                    <ng-md-icon icon="brightness_3"></ng-md-icon>
+                </md-switch>
+
+                <md-input-container>
+                    <label>Day Map style</label>
+                    <md-select ng-model="mapStyle" aria-label="style_selector">
+                        <md-option ng-repeat="(style_key, style_value) in map_styles_available" ng-value="style_key"
+                            aria-label="style_selector-item">
+                            {{ style_key }}
+                        </md-option>
+                    </md-select>
+
+                    <!--<md-select ng-model="ctrl.userState">-->
+                        <!--<md-option><em>None</em></md-option>-->
+                        <!--<md-option ng-repeat="state in ctrl.states" ng-value="state.abbrev" ng-disabled="$index === 1">-->
+                            <!--{{state.abbrev}}-->
+                        <!--</md-option>-->
+                    <!--</md-select>-->
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Night Map style</label>
+                    <md-select ng-model="mapStyle" aria-label="style_selector">
+                        <md-option ng-repeat="(style_key, style_value) in map_styles_available" ng-value="style_key"
+                                   aria-label="style_selector-item">
+                            {{ style_key }}
+                        </md-option>
+                    </md-select>
+                </md-input-container>
+            </md-content>
+
+            <!--<md-button ng-click="" class="md-raised md-primary">-->
+                <!--Save-->
+            <!--</md-button>-->
+        </md-sidenav>
+
+    </section>
+</div>

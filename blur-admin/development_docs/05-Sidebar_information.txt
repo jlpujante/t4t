@@ -1,0 +1,46 @@
+Sidebar
+Sidebar is used to provide convenient way of navigation in the application. Application support only one sidebar per angular application. That means sidebar is basically a singletone object. Currently sidebar supports level 1 and 2 sub menus.
+
+Sidebar can be created using baSidebar directive:
+
+<ba-sidebar></ba-sidebar>
+For now it support only javascript configuration. Though it can be configured manually or via ui-router states. This methods can be used either together or one at a time.
+
+Manual configuration
+For manual configuration you need to use baSidebarServiceProvider provider in angular configuration block. The provider has addStaticItem method, which receives menuItem object as an argument, which can have following properties:
+
+property	type	meaning
+title	String	Name of the menu item
+icon	String	Icon (it’s a class name) to be displayed near title
+stateRef	String	ui-router state associated with this menu item
+fixedHref	String	Url associated with this menu item
+blank	String	Specifies if following Url should be opened in new browser tab
+subMenu	Array of menu items	List of menu items to be displayed as next level submenu
+Sample manual configuration:
+
+    baSidebarServiceProvider.addStaticItem({
+      title: 'Menu Level 1',
+      icon: 'ion-ios-more'
+    });
+Route configuration
+By default sidebar iterates through all ui-router states you defined in your application and searches for sidebarMeta object in them. For each state, which has this property, sidebar element is created.
+
+States are being grouped hierarchically. That means if there’s a parent abstract state for some state and they both have sidebarMeta property, it will be displayed as a sub item of that abstract state’s menu item.
+
+Name of the item is taken from state‘s title property. Sample state configuration, which will add an item to sidebar:
+
+$stateProvider
+        .state('dashboard', {
+          url: '/dashboard',
+          templateUrl: 'app/pages/dashboard/dashboard.html',
+          title: 'Dashboard',
+          sidebarMeta: {
+            icon: 'ion-android-home',
+            order: 0,
+          },
+        });
+sidebarMeta object can have following properties:
+
+property	type	meaning
+icon	String	Icon (it’s a class name) to be displayed near title
+order	Number	Element’s order in current hierarchy

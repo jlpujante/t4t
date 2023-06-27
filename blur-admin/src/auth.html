@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'inc_head.html' %}
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900&subset=latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic'
+          rel='stylesheet' type='text/css'>
+
+    <!--
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon-96x96.png">
+    -->
+
+    <!-- build:css({.tmp/serve,src}) /styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css({.tmp/serve,src}) /styles/auth.css -->
+    <!-- inject:css -->
+    <!-- css files will be automatically insert here -->
+    <!-- endinject -->
+    <!-- endbuild -->
+</head>
+<body>
+<main class="auth-main">
+    <div class="auth-block">
+        <img style="display: block; margin-left: auto; margin-right: auto;" src="/img/logo-t4t-white-mini-version2.png"/>
+        <h1>Sign in</h1>
+        <!--<h1>Iniciar sesi&oacute;n</h1>-->
+        <!--<h1>Se connecter</h1>-->
+        <!--<a href="reg.html" class="auth-link">New to Blur Admin? Sign up!</a>-->
+
+        <form id="login_form" name="login_form" method="post" class="form-horizontal">
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}"/>
+            <div class="form-group" id="form-group-email">
+                <label for="inputError2" class="col-sm-3 control-label">Email</label>
+                <!--<label for="inputError2" class="col-sm-3 control-label">Correo electr&oacute;nico</label>-->
+                <!--<label for="inputError2" class="col-sm-3 control-label">Adresse email</label>-->
+                <div class="col-sm-9">
+                    <input type="email" class="form-control autocomplete-off" id="usernameInput"
+                    aria-describedby="inputError2Status" name="email" placeholder="Email" autocomplete="off" autofocus>
+                    <!--<input type="email" class="form-control autocomplete-off" id="usernameInput"-->
+                           <!--aria-describedby="inputError2Status" name="email" placeholder="Correo electr&oacute;nico" autocomplete="off" autofocus>-->
+                    <!--<input type="email" class="form-control autocomplete-off" id="usernameInput"-->
+                           <!--aria-describedby="inputError2Status" name="email" placeholder="Adresse email" autocomplete="off" autofocus>-->
+                    <i class="ion-android-cancel form-control-feedback hidden" id="form-feedback-email" aria-hidden="true"></i>
+                    <span id="inputError2Status" class="sr-only">(error)</span>
+                </div>
+            </div>
+            <div class="form-group" id="form-group-password">
+                <label for="inputError3" class="col-sm-3 control-label">Password</label>
+                <!--<label for="inputError3" class="col-sm-3 control-label">Contrase&ntilde;a</label>-->
+                <!--<label for="inputError3" class="col-sm-3 control-label">Mot de passe</label>-->
+                <div class="col-sm-9">
+                    <input type="password" class="form-control autocomplete-off" id="passwordInput"
+                           aria-describedby="inputError3Status" name="password" placeholder="Password" autocomplete="off">
+                    <!--<input type="password" class="form-control autocomplete-off" id="passwordInput"-->
+                           <!--aria-describedby="inputError3Status" name="password" placeholder="Contrase&ntilde;a" autocomplete="off">-->
+                    <!--<input type="password" class="form-control autocomplete-off" id="passwordInput"-->
+                           <!--aria-describedby="inputError3Status" name="password" placeholder="Mot de passe" autocomplete="off">-->
+                    <i class="ion-android-cancel form-control-feedback hidden" id="form-feedback-password" aria-hidden="true"></i>
+                    <span id="inputError3Status" class="sr-only">(error)</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-3 col-sm-9">
+                    <button type="button" id="button_login" class="btn btn-default btn-auth ladda-button ladda-button-login"
+                            data-color="mint" data-style="slide-up" data-spinner-color="#22afe0" onclick="submit_ladda_login_form()">
+                        <span class="ladda-label">Sign in</span>
+                        <!--<span class="ladda-label">Entrar</span>-->
+                        <!--<span class="ladda-label">S'authentifier</span>-->
+                    </button>
+                    <a href="#" class="forgot-pass" onclick="goto_password_recovery()">Forgot password?</a>
+                    <!--<a href="#" class="forgot-pass" onclick="goto_password_recovery()">¿Olvidaste tu contrase&ntilde;a?</a>-->
+                    <!--<a href="#" class="forgot-pass" onclick="goto_password_recovery()">Besoin d'aide?</a>-->
+                </div>
+            </div>
+        </form>
+
+        <!--
+        <div class="auth-sep"><span><span>or Sign in with one click</span></span></div>
+
+        <div class="al-share-auth">
+          <ul class="al-share clearfix">
+            <li><i class="socicon socicon-facebook" title="Share on Facebook"></i></li>
+            <li><i class="socicon socicon-twitter" title="Share on Twitter"></i></li>
+            <li><i class="socicon socicon-google" title="Share on Google Plus"></i></li>
+          </ul>
+        </div>
+        -->
+    </div>
+</main>
+
+
+<!-- build:js(src) /scripts/vendor.js -->
+<!-- bower:js -->
+<!-- run `gulp inject` to automatically populate bower script dependencies -->
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp/serve,.tmp/partials,src}) /scripts/app-auth.js -->
+<!-- inject:js -->
+<!-- js files will be automatically insert here -->
+<!-- endinject -->
+
+</body>
+</html>

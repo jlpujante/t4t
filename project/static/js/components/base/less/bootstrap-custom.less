@@ -1,0 +1,202 @@
+@import "bootstrap-opensans";
+@import "custom-bootstrap-variables";
+
+html, body{
+	height: 100%;
+}
+
+span.corpo{
+	font-weight: @semibold;
+	span{
+		color: @primary-color;
+	}
+}
+
+body{
+	font-size: 16px;
+	font-family: @font-family-base;
+	padding-top: 80px; /* to avoid that the content could be hidden by fixed navbar */
+	.navbar{
+		margin-bottom: 0;
+		text-transform: uppercase;
+		@media (min-width: @screen-md-min) {
+			height: 80px;
+		}
+		.nav{
+			font-size: 14px;
+			@media (min-width: @screen-md-min) { font-size: 15px; }
+			@media (min-width: @screen-lg-min) { font-size: 17px; }
+			margin-top: 10px;
+			li{
+				@media (min-width: @screen-md-min) { padding: 16px 0px 4px; }
+				a{
+					text-decoration: none;
+					color: #000;
+					font-weight: @semibold;
+					@media (min-width: @screen-md-min) { padding-top: 15px; }
+				}
+				a:hover{
+					color: @primary-color;
+				}
+			}
+			li.login{
+				background: transparent url('@{img_satmed_folder}/login.png') 15px center no-repeat;
+				@media (min-width: @screen-md-min) {
+					padding-left: 0;
+					margin-left: 40px;
+					background: transparent url('@{img_satmed_folder}/login.png') center 5px no-repeat;
+				}
+				@media all and (-webkit-min-device-pixel-ratio: 1.5) {
+					background-image: url('@{img_satmed_folder}/login@2x.png');
+					background-size: 18px 18px;
+				}
+				a{
+					display: inline-block;
+					padding-left: 40px;
+					width: 100%;
+					color: @primary-color;
+					@media (min-width: @screen-md-min) {
+						display: inherit;
+						padding-left: 15px;
+					}
+				}
+				a:hover{
+
+				}
+			}
+			li.active{
+				a, a:hover, a:active{
+					background: transparent;
+					color: @primary-color;
+				}
+			}
+		}
+		.navbar-header{
+			height: 80px;
+			.navbar-toggle{
+				margin-top: 24px;
+				border-color: @primary-color;
+					transition: background 0.5s ease;
+					-moz-transition: background 0.5s ease;
+					-webkit-transition: background 0.5s ease;
+
+				span.icon-bar{
+					background: @primary-color;
+						transition: background 0.5s ease;
+						-moz-transition: background 0.5s ease;
+						-webkit-transition: background 0.5s ease;
+				}
+			}
+			.navbar-toggle:hover{
+				background: @primary-color;
+					transition: background 0.5s ease;
+					-moz-transition: background 0.5s ease;
+					-webkit-transition: background 0.5s ease;
+
+				span.icon-bar{
+					background: white;
+						transition: background 0.5s ease;
+						-moz-transition: background 0.5s ease;
+						-webkit-transition: background 0.5s ease;
+				}
+			}
+		}
+		.navbar-brand{
+			//margin-top: 15px;
+			padding-bottom: 20px;
+			@media (min-width: @screen-md-min) { padding-left: 0px; padding-right: 0px; }
+		}
+	}
+
+	.btn-satmed, .btn-satmed:hover, .btn-satmed:focus, .btn-satmed:active{
+		background: @primary-color;
+		border: none;
+		color: white;
+		border: 2px solid transparent;
+		font-weight: @light;
+
+			transition: background 0.5s ease, color 0.5s ease;
+			-moz-transition: background 0.5s ease, color 0.5s ease;
+			-webkit-transition: background 0.5s ease, color 0.5s ease;
+	}
+
+	@footer-height-normal: 50px;
+	@footer-height-small: 35px;
+
+	footer{
+		height: @footer-height-small;
+		padding-top: 2px;
+		padding-bottom: 0px;
+		background: @footer-background;
+		color: white;
+		font-size: 8px;
+		font-weight: @bold;
+		#footer-info{ position: relative; }
+		#corpo_footer {
+			display: inline-block;
+			position: absolute;
+			top: 9px;
+		}
+		#funders_footer {
+			display: inline-block;
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			img{
+				margin-left: 2px;
+				width: 132px;
+			}
+		}
+	}
+
+	#footer-saver-b { height: @footer-height-small; }
+	#footer-saver-a {
+		min-height: 100%;
+		height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+		height: 100%;
+		margin: 0 auto -@footer-height-small; /* the bottom margin is the negative value of the footer's height */
+	}
+
+	@media (min-width: @screen-sm-min) {
+		#footer-saver-b { height: @footer-height-normal;}
+		#footer-saver-a { margin: 0 auto -@footer-height-normal;}
+		footer{
+			height: @footer-height-normal;
+			font-size: 12px;
+			#corpo_footer { top: 14px; }
+			#funders_footer {
+				img{
+					margin-left: 12px;
+					width: 200px;
+				}
+			}
+		}
+	}
+
+}
+
+
+.headroom {
+    -webkit-transition: transform 200ms linear;
+    -moz-transition: transform 200ms linear;
+    -o-transition: transform 200ms linear;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    -webkit-transition: translateY(0%);
+    -moz-transition: translateY(0%);
+    -o-transition: translateY(0%);
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    -webkit-transition: translateY(-100%);
+    -moz-transition: translateY(-100%);
+    -o-transition: translateY(-100%);
+    transform: translateY(-100%);
+}
+
+@media screen and (max-height: 320px) {
+    li.non-important-menu, .hide-on-short-height {
+        display: none;
+    }
+}

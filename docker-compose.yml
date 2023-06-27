@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+    #######################################
+    # REDIS ###############################
+    #######################################
+    redis:
+        image: redis:alpine
+        container_name: redis
+        hostname: redis
+        ports:
+            - "6379:6379"
+        networks:
+            - privback
+
+    #######################################
+    # PORTAL.TRACK4TRUCK.LU  (NGINX) ######
+    #######################################
+    site-track4truck:
+        build: ./track4truck-portal-proxy
+        container_name: portal-t4t-nginx
+        hostname: portal-t4t-nginx
+        links:
+            - portal-track4truck
+        expose:
+            - 80
+        networks:
+            - privback
+        environment:
+            - "VIRTUAL_HOST=portal.t4t.lu"
+            - "VIRTUAL_PORT=80"
+
+    #######################################
+    # PORTAL.TRACK4TRUCK.LU ###############
+    #######################################
+    portal-track4truck:
+        build: ./track4truck-portal
+        container_name: portal-track4truck
+        hostname: portal-track4truck
+        expose:
+            - 8080
+        networks:
+            - privback
+        volumes:
+            - /root/docker-volumes/portal-track4truck:/opt/track4truck
+networks:
+  privback:

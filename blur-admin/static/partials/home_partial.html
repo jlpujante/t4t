@@ -1,0 +1,116 @@
+<div class="container" ng-cloak>
+    <md-content>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+
+                <img src="{{ url_img_logo }}" width="100px"/>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+
+                <!--<md-button class="md-fab md-mini" aria-label="Options" ng-click="toggleLeft()" class="md-raised">-->
+                <!--<ng-md-icon icon="dehaze" style="fill: white"></ng-md-icon>-->
+                <!--</md-button>-->
+
+                <!--<md-button class="menu" ><i class="fa fa-bars"></i></md-button>-->
+
+                <!--
+                <md-button aria-label="Open Sidebar" ng-click="toggleLeft()" class="md-raised">
+                    Open sidebar
+                </md-button>
+                -->
+
+                <md-button aria-label="Go Back" ng-click="goBack()" ng-if="truckId" class="md-raised">
+                    Go back
+                </md-button>
+
+                <!--<h2>-->
+                <!--<span>Tracker demo</span>-->
+                <!--</h2>-->
+
+                &nbsp;&nbsp;
+                <span flex="20"></span>
+
+                <ng-md-icon icon="search" style="fill: white"></ng-md-icon>
+                <md-chips ng-model="trucksSelectedList" md-autocomplete-snap flex="auto"
+                    md-max-chips="3"
+                    md-on-add="searchItemAdded($chip)"
+                    md-on-remove="searchItemRemoved($chip)"
+                    md-transform-chip="transformChip($chip)"
+                    md-require-match="autocompleteDemoRequireMatch">
+                    <md-autocomplete
+                        ng-hide="trucksSelectedList.length >= 3"
+                        md-selected-item="selectedItem"
+                        md-search-text="searchText"
+                        md-items="item in querySearch(searchText)"
+                        md-item-text="item.name"
+                        placeholder="Search">
+                            <span md-highlight-text="searchText">{{item.name}} :: {{item.type}}</span>
+                    </md-autocomplete>
+                    <!--<button md-chip-remove>-->
+                    <!--<md-icon md-svg-icon="md-close" ng-click="searchItemRemoved($chip)"></md-icon>-->
+                    <!--</button>-->
+                    <md-chip-template>
+                        <span>
+                            <strong>{{$chip.name}}</strong>
+                        </span>
+                    </md-chip-template>
+                </md-chips>
+
+                <!--&nbsp;&nbsp;-->
+
+                <!--<md-switch aria-label="traffic" ng-model="trafficInfo">-->
+                <!--<ng-md-icon icon="traffic" style="fill: white"></ng-md-icon>-->
+                <!--</md-switch>-->
+                <!--&nbsp;&nbsp;-->
+                <!--<md-switch aria-label="map_mode" ng-model="nightMode">-->
+                <!--<ng-md-icon icon="wb_sunny" style="fill: white"></ng-md-icon>-->
+                <!--/-->
+                <!--<ng-md-icon icon="brightness_3" style="fill: white"></ng-md-icon>-->
+                <!--</md-switch>-->
+                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                <!--<a href="#!list"> List </a>-->
+                <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+                <!--<md-select ng-model="mapStyle" aria-label="style_selector">-->
+                <!--<md-option ng-repeat="(style_key, style_value) in map_styles_available" ng-value="style_key"-->
+                <!--aria-label="style_selector-item">-->
+                <!--{{ style_key }}-->
+                <!--</md-option>-->
+                <!--</md-select>-->
+
+                <span flex></span>
+                <!--<i class="material-icons">account_circle</i>-->
+
+                <!--<ng-md-icon icon="my_location" style="fill: white"></ng-md-icon>-->
+                <!--<ng-md-icon icon="account_circle" style="fill: white"></ng-md-icon>-->
+                <!--<a href="#" ng-click="logout($event)">-->
+                <!--<ng-md-icon icon="exit_to_app" style="fill: white"></ng-md-icon>-->
+                <!--</a>-->
+                <md-button class="md-fab md-mini" aria-label="GeoLocation" ng-click="" class="md-raised">
+                    <ng-md-icon icon="my_location" style="fill: white"></ng-md-icon>
+                </md-button>
+                <md-button class="md-fab md-mini" aria-label="Settings" ng-click="showAccount()" class="md-raised">
+                    <ng-md-icon icon="settings" style="fill: white"></ng-md-icon>
+                    <md-tooltip md-direction="bottom">
+                        Settings
+                    </md-tooltip>
+                </md-button>
+                <md-button class="md-fab md-mini" aria-label="Logout" ng-click="logout($event)" class="md-raised">
+                    <ng-md-icon icon="exit_to_app" style="fill: white"></ng-md-icon>
+                    <md-tooltip md-direction="bottom">
+                        Logout
+                    </md-tooltip>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+
+
+        <md-content>
+
+            <!--<sidebar-component></sidebar-component>-->
+            <account-sidebar-component></account-sidebar-component>
+
+            <google-maps-component item-id="truckId">Loading...</google-maps-component>
+        </md-content>
+
+    </md-content>
+</div>

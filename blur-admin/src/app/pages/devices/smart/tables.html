@@ -1,0 +1,87 @@
+<div class="widgets">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div ba-panel ba-panel-title="Table of Devices" ba-panel-class="with-scroll">
+                <!--<div include-with-scope="app/pages/devices/widgets/devicesTable.html"></div>-->
+                <!--<devices-table template="app/pages/devices/widgets/devicesTable.html"-->
+                <!--table-data="smartTableData"></devices-table>-->
+
+
+                <div class="horizontal-scroll">
+                    <div class="form-group">
+                        <label>Rows on page
+                            <select class="form-control selectpicker show-tick" title="Rows on page" selectpicker
+                                    ng-model="smartTablePageSize" ng-options="i for i in [5,10,15,20,25]">
+                            </select>
+                        </label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-primary" data-toggle="modal"
+                                ng-click="openModal('app/pages/devices/modalTemplates/basicModal.html', 'md')">
+                            Add Device
+                        </button>
+                    </div>
+                    <table class="table" st-table="displayedCollection" st-safe-src="rowCollection">
+                        <thead>
+                        <tr class="sortable ">
+                            <!--<th class="table-id" st-sort="id" st-sort-default="true">#</th>-->
+                            <th st-sort="reference">Reference</th>
+                            <th st-sort="name">Name</th>
+                            <!--<th st-sort="lastName">Last Name</th>-->
+                            <!--<th st-sort="username">Username</th>-->
+                            <th st-sort="lastUpdated">Last updated</th>
+                            <th class="text-center" st-sort="currentPosition">Current Position</th>
+                            <th class="text-center" st-sort="tracking">Tracking</th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <input st-search="reference" placeholder="Search Reference"
+                                       class="input-sm form-control search-input" type="search"/></th>
+                            </th>
+                            <th>
+                                <input st-search="name" placeholder="Search Name"
+                                       class="input-sm form-control search-input" type="search"/></th>
+                            <th>
+                                <input st-search="lastUpdated" placeholder="Search Last Updated"
+                                       class="input-sm form-control search-input" type="search"/></th>
+                            <!--<th><input st-search="lastName" placeholder="Search Last Name" class="input-sm form-control search-input"-->
+                            <!--type="search"/></th>-->
+                            <!--<th><input st-search="username" placeholder="Search Username" class="input-sm form-control search-input"-->
+                            <!--type="search"/></th>-->
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in displayedCollection">
+                            <!--<td class="table-id">{{item.id}}</td>-->
+                            <td>{{ item.reference }}</td>
+                            <td>{{ item.name }}</td>
+                            <td>{{ item.last_updated | timestamp2date | date: 'medium' }}</td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-default btn-xs"
+                                        ng-click="showCurrentPosition(item)"><i class="fa fa-map-marker"></i></button>
+                            </td>
+                            <td class="text-center">
+                                <button type="button" class="btn btn-default btn-xs"
+                                        ng-click="openTrackingSystem(item)"><i class="fa fa-location-arrow"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="6" class="text-center">
+                                <div st-pagination="" st-items-by-page="smartTablePageSize"
+                                     st-displayed-pages="5"></div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
